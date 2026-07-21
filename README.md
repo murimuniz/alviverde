@@ -1,51 +1,39 @@
 # Alvi-Verde Futebol Clube — Proposta de Redesign
 
-Protótipo de redesign do site do Alvi-Verde Futebol Clube (Vila Romana, São Paulo), feito para apresentação ao cliente. Site estático, sem dependências de build — HTML, CSS e JS puros.
+Protótipo de redesign do site do Alvi-Verde Futebol Clube (Vila Romana, São Paulo). Site estático, sem dependências de build — HTML, CSS e JS puros, todos os arquivos na raiz.
 
 ## Estrutura
 
 ```
-alviverde-site/
-├── index.html
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── script.js
-└── README.md
+index.html
+style.css
+script.js
+README.md
+.gitignore
 ```
 
-## Rodar localmente
+## Como subir no GitHub (substituindo os arquivos atuais do repositório)
 
-Não precisa de instalação. Basta abrir o `index.html` no navegador, ou servir a pasta com qualquer servidor estático, por exemplo:
+1. Entre no seu repositório no GitHub.
+2. Apague os arquivos antigos `index.html`, `style.css` (ou `estilo.css`) e `script.js`, se já existirem — ou simplesmente suba estes por cima, com **exatamente estes nomes**: `index.html`, `style.css`, `script.js`.
+3. Clique em **Add file → Upload files**.
+4. Arraste os 5 arquivos desta pasta (não uma pasta mãe, os arquivos soltos mesmo).
+5. Confirme que a lista de upload mostra: `index.html`, `style.css`, `script.js`, `README.md`, `.gitignore` — todos sem estar dentro de nenhuma subpasta.
+6. Clique em **Commit changes**.
 
-```bash
-python3 -m http.server 8000
+## Ativar o GitHub Pages
+
+**Settings → Pages → Source: Deploy from a branch → Branch: main → Folder: / (root) → Save**
+
+O site fica em:
+```
+https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/
 ```
 
-Depois acesse `http://localhost:8000`.
-
-## Publicar no GitHub Pages
-
-1. Crie um repositório novo no GitHub (ex: `alviverde-redesign`).
-2. Suba os arquivos desta pasta para a raiz do repositório:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Primeira versão do redesign"
-   git branch -M main
-   git remote add origin https://github.com/SEU-USUARIO/alviverde-redesign.git
-   git push -u origin main
-   ```
-
-3. No repositório, vá em **Settings → Pages**.
-4. Em **Source**, selecione a branch `main` e a pasta `/ (root)`.
-5. Salve. Em alguns minutos o site estará no ar em:
-   `https://SEU-USUARIO.github.io/alviverde-redesign/`
+Depois de qualquer commit nesses arquivos, espera de 30s a 2min e recarregue com Ctrl+Shift+R (ou aba anônima) pra garantir que não é cache antigo.
 
 ## Observações
 
-- As fotos usadas são as mesmas do site atual do clube (hospedadas no Wix). Se o projeto for pra frente, o ideal é baixar essas imagens e servi-las localmente (pasta `assets/img/`) em vez de depender do domínio do Wix.
-- O formulário de contato é só front-end (não envia e-mail de verdade ainda) — precisa de um serviço tipo Formspree, EmailJS, ou um backend simples para funcionar em produção.
+- As fotos usadas ainda apontam para o domínio do Wix do site atual do clube. Se for pra frente com o projeto, baixe essas imagens e sirva localmente (ex: pasta `img/`).
+- O formulário de contato é só front-end — precisa de um serviço tipo Formspree ou EmailJS pra enviar de verdade.
 - O mapa usa um embed público do Google Maps, sem necessidade de chave de API.
